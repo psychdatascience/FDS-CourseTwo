@@ -123,7 +123,12 @@ Once you've created another new file, go back to your terminal and type
 
 `git pull origin`
 
-After that, do an `ls`, and you'll see that your new file has been immediately added to your local repo.
+After that, do an `ls`, and you'll see that your new file has been immediately added to your local repo!
+
+Many people (including me) fall into the habit of using `git pull origin` a lot because it's quick and easy. Just always be aware that you want to be absolutely sure that you want to incorporate all the changes made on the origin into your local repo!
+
+## Summary
+The things covered in the above exercise cover the basic git commands and workflow used to back up your projects to GitHub. This provides you with not only a backup in case anything should happen to your computer, but also allows you to access the current version of your project from any computer with an internet connection.
 
 ## footnote
 \* The some versions of Linux, including the Mac OS, come with a terminal based text editor called "nano" that is easy to use and great for quick simple edits. I love it.   
