@@ -7,6 +7,10 @@ Go to your home on GitHub and click the "New" button in the left sidebar.
 
 ![new repo](images/NewRepoButton.png)
 
+Name your new repo whatever you want. Something like "inClassRep" or whatever. Select the "Add a README file" and the "GNU..." or "MIT" license. 
+
+Edit the README file to add "This is an FDS test repo" or something similar, and save.
+
 Note, it is possible to make a new repo on your local machine and then "reverse clone" it to GitHub. It is easier to go in the other direction, however, cloning a GitHub repo to your local machine.
 
 If you have a project that you've been working on outside of git/GitHub, the easiest thing to do is create an empty repo, copy or move your existing files into the repo folder, and then `git add` them to the repo.
@@ -90,7 +94,7 @@ You might think that all plain text files end with a .txt extension. Some do, bu
 
 In reality, many of the files we deal with are plain text files also. The file I'm working on now - GitGitHubExercise.md - is a plain text file. It has the .md extension to tell me, you, other people, the operating system, and other applications that the text inside is in *markdown* syntax, and can be treated as such. Same with .py files, .R files, etc. These are just plain text files, but the extensions tell the world that they contain Python code, R code, etc.
 
-The nice thing about having these all be plain text files is that you can quickly edit them in ***anything***. You can use anything from a terminal based editors like nano or vi to bare bones GUI text editors like cotEditor or textEdit to Microsoft Word or Google Docs. If you use something like the latter two, however, make sure you save them out as ***plain text***, not .docx or whatever!
+The nice thing about having these all be plain text files is that you can quickly edit them in ***anything***. You can use anything from a terminal based editor like nano or vi to bare bones GUI text editors like cotEditor or textEdit to Microsoft Word or Google Docs. If you use something like the latter two, however, make sure you save them out as ***plain text***, not .docx or whatever!
 
 
 ## Change a file on GitHub and fetch
@@ -104,8 +108,10 @@ Fetch is the safe way to get changes from GitHub, because no changes are made to
 
 The `--oneline` argument just keeps the output mercifully short. If you look at the top line of the log, you can see that we've created a new file on GitHub. In my case:
 
-`(base) $ git log --oneline origin                                         20:45
-2e89271 (origin/main, origin/HEAD) Create fileOnGitHub.py`
+```
+(base) $ git log --oneline origin                                         20:45
+2e89271 (origin/main, origin/HEAD) Create fileOnGitHub.py
+```
 
 That looks good - nothing looks like it's going to destroy my local repo, so lets incorporate - "merge" - the changes!
 
