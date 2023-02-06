@@ -1,0 +1,20 @@
+If this array were named "phred", we would index it just like above, but with an extra index – the coordinate specifying the location along the third dimension. So `phred[5, 5, 3]` would specify the bottom right location just peeking out on the fourth – what? – "page" of the array.
+
+Though arrays can have any number of dimensions, lower-dimensional arrays are common and get their own special names.
+
+A "matrix" is an array of 2 dimensions. As you already know, a matrix is a universal format for data and is preferably in "tidy" format, where each row is an observation and each column is a variable.
+
+A "vector" is a list of numbers, so named because a simple list of numbers is used in math (linear algebra) and physics to specify vectors (such as force). Vectors can be 
+
+* "row vectors" - a matrix with a single row
+* "column vectors" - a matrix with a single column
+* a list of numbers with only a single dimension, like a Python list
+
+Finally, in this lingo, a single number is referred to as a "scaler" (because multiplying a vector by a number scales the length of the vector without changing its direction).
+
+a = [[[1, 2, 3],[4,5,6]],[[7,8,9],[10,11,12]]]
+print(a)
+
+aa = np.array(a)
+print(aa)
+
