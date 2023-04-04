@@ -1,8 +1,36 @@
 FDS-CourseTwo 
 
-Planned Topics for Classes in Spring 2023
+### Listing of Tutorials
 
-Topics
+
+| Tutorial | Topics            |
+| -------- | ------            |
+| 001      | Using the terminal | 
+| 002      | Git           |
+| 003      | Git branches |
+| 004      | Jupyter notebook review |
+| 005      | Python: Objects and variables |
+| 006      | Python: loops and functions |
+| 007      | Numpy review |
+| 008      | Matplotlib review | 
+| 009      | Multi-panel figures (matplotlib) |
+| 010      | Multi-panel figures II |
+| 011      | Pandas review |
+| 012      | Seaborn review|
+| 013      | Data wrangling|
+| 014      | Data wrangling II |
+| 015      | Data wrangling III |
+| 016      | Simulations|
+| 017      | Regression  |
+| 018      | Regression II |
+| 019      |   |
+| 020      |   |
+| 021      |   |
+| 022      |   |
+| 023      |   |
+
+---
+Topics notes
 - Review FDS-CourseOne
   - github, terminal
   - Python programming
@@ -26,14 +54,3 @@ Topics
 - Final Projects - maybe? KISS!
 
 - SQL (make part of a separate course)
-
-Weeks (not counting spring break). 
-
-1.  
-2.  
-3.  
-4.  
-5.  
-6.  
-7.  
-8.  
