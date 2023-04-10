@@ -1,0 +1,3 @@
+# Ignore stupid os generated files
+.DS_Store
+
