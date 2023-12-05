@@ -1,14 +1,12 @@
-Certainly! Designing a machine learning course for students who are already familiar with Python and basic data science libraries is a great way to introduce them to this exciting field. Here's a structured outline for your course, focusing on popular machine learning techniques in an order that gradually increases in complexity:
-
-### Course Title: Introduction to Machine Learning with Python
-
 #### **Module 1: Introduction to Machine Learning**
+
 - **Week 1: Overview of Machine Learning**
   - Definition and applications of machine learning
   - Types of machine learning: Supervised, Unsupervised, Reinforcement Learning
   - Introduction to the machine learning workflow: Data Collection, Preprocessing, Model Training, Evaluation, Deployment
 
 #### **Module 2: Supervised Learning - Basics**
+
 - **Week 2: Regression Techniques**
   - Linear Regression
   - Polynomial Regression
@@ -68,11 +66,9 @@ Certainly! Designing a machine learning course for students who are already fami
   - Course wrap-up and future learning paths
 
 #### **Assignments and Projects**
-- Regular assignments and quizzes to reinforce learning.
-- A final project where students can apply learned concepts to a real-world problem or dataset.
+- To flip or not to flip?
+  - Weekly or twice-weekly tutorials
+  - homework
 
-#### **Additional Resources**
-- Recommended reading materials and online resources.
-- Access to online forums for discussion and doubt clearance.
+- final project 
 
-This course is designed to be interactive and hands-on, with regular practical assignments and a final project that encourages students to apply what they have learned to real-world problems.
