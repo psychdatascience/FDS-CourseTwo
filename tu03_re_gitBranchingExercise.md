@@ -1,12 +1,38 @@
 # git / GitHub branching exercise
 
-## Branches
-Branches are a way to safely work on your code (or someone else's) without risking breaking anything.
+---
+
+### Learning Goals:
+
+ * Understand `git branches`
+ * Learn how to create, change and merge `git branches`
+ * Learn how to make a `pull request`
+ 
+### Prerequisites:
+
+- Internet access
+- Installation of a Linux/Unix Terminal and Git/GitHub
+- [Introduction to Git and GitHub](https://github.com/psychdatascience/FDS-CourseOne/blob/main/tu002_IntroductionToGitAndGitHub.md)
+- [Introduction to Making a Repository](https://github.com/psychdatascience/FDS-CourseOne/blob/main/tu003_MakeARepo_IntroToMD.md)
+- [Introduction to Git via Terminal](https://github.com/psychdatascience/FDS-CourseOne/blob/main/tu005_GitViaTerminal.md)
+- [Advanced Git via Terminal](https://github.com/psychdatascience/FDS-CourseOne/blob/main/tu005_git.md)
+- [Experience Cloning Repositories](https://github.com/psychdatascience/FDS-CourseOne/blob/main/tu005_gitClone.md)
+
+---
+
+## `git` Branches
+
+Branches are a way to safely work on your code (or someone else's) without risking breaking anything. Branches allow you or your collaborators to explore different versions of the code without affecting the main code repository. 
+
+We conceptualize `git branches` using the tree as a methaphor, you create a new tree branch and work on that without affecting the main tree trunk. You change the tree trunk only if you decide to merge the brach with the main repository (the tree trunk).
 
 When you make a branch and start working on it, you working on *copies* of your stuff without messing up the current (presumably working) versions. Once you have added whatever new stuff you want to your code, debugged it, and verified that's working the way you want, then you can *merge* your changes back into the main code.
 
+[Here is some technical documentation](https://git-scm.com/docs/git-branch) on `git branching`
+
 
 ### Make a new repo on GitHub
+
 This is just for the class exercise, so you can name it anything you want. I named mine "classBranchTest".
 
 Select the box for adding a README file (you should aways have a README file in my opinion). Notice that near the bottom it says
@@ -18,6 +44,7 @@ So this means that, even though we have not manually created any branches yet, w
 As the name suggest, this is the functioning, most-polished, bug-free version of your code - the "production" version if you will. It's the version of your project that you would show off to friends and family, and it is also the version that you want to make sure and *not* mess up!
 
 ### Add a file
+
 In your new repo, hit the "Add file" button and select "Create new file". Notice that right where you name the file, GitHub tells you that it is creating file in the "main" branch. See Figure 1.
 
 ![New File](images/newFileInMain.png)
@@ -37,6 +64,7 @@ Keep the default option and save the file.
 We now have new repo with one branch in it - the "main" branch - that has two files in it (the README and the one you just created).
 
 ### Clone the repo to your local machine
+
 You know how to do this! Open a terminal in (or navigate a terminal to) your GitHub folder, and get gitting:
 
 `git clone https://github.com/...` (where the rest of the address is the path to your new repo on GitHub of course.
@@ -52,6 +80,8 @@ This should show us that we have 1) the README file, 2) the other file we made, 
 Now let's check the branches on our local repo. There should be only one, "main", but let's confirm:
 
 `git branch`
+
+--- 
 
 ### Make a new branch
 
@@ -106,6 +136,7 @@ or
 `git push origin`
 
 ### Check your repo on GitHub
+
 If you now go to GitHub (and maybe refresh the tab), you'll see a nice message something like in Figure 3.
 
 ![Branch update message](images/pushBranchVerification.png)
@@ -173,6 +204,7 @@ And now you can delete the temporary branch.
 
 `git branch -d tempbranch` 
 
+---
 
 ## Summary
 
@@ -187,4 +219,5 @@ Today, we learned how to safely make changes to a project. To do this, we
     
 The one thing we haven't covered is how to resolve conflicts should they arise. GitHub makes this fairly easy, and we'll cover this as it comes up.
 
+---
 

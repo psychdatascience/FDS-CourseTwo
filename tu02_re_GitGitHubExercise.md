@@ -2,7 +2,28 @@
 
 The following exercise will warm up our git/GitHub muscles, and remind us of the most commonly used things we do when using git and GitHub to make sure our projects and their history are safely backed up.
 
+---
+
+### Learning Goals:
+
+ * Understand `git branches`
+ * Learn how to create, change and merge `git branches`
+ * Learn how to make a `pull request`
+ 
+### Prerequisites:
+
+- Internet access
+- Installation of a Linux/Unix Terminal and Git/GitHub
+- [Introduction to Git and GitHub](https://github.com/psychdatascience/FDS-CourseOne/blob/main/tu002_IntroductionToGitAndGitHub.md)
+- [Introduction to Making a Repository](https://github.com/psychdatascience/FDS-CourseOne/blob/main/tu003_MakeARepo_IntroToMD.md)
+- [Introduction to Git via Terminal](https://github.com/psychdatascience/FDS-CourseOne/blob/main/tu005_GitViaTerminal.md)
+- [Advanced Git via Terminal](https://github.com/psychdatascience/FDS-CourseOne/blob/main/tu005_git.md)
+- [Experience Cloning Repositories](https://github.com/psychdatascience/FDS-CourseOne/blob/main/tu005_gitClone.md)
+
+---
+
 ## Create a new repo on GitHub
+
 Go to your home on GitHub and click the "New" button in the left sidebar.
 
 ![new repo](images/NewRepoButton.png)
@@ -42,6 +63,7 @@ It should say something like
 > Your branch is up to date with 'origin/main'.
 
 ## Change an existing file locally and push
+
 Make a change to your README.md file. Use any text editor\* you like. Just make sure it stays a plain text file.
 
 Do a `git status` again. The output should include "modified: README.md".
@@ -61,7 +83,9 @@ Now go to the "remote" copy of your repo on GitHub (refresh the browser tab if i
 The above example shows our basic work flow for editing files and using GitHub as a backup service. If anything were to happen to your laptop, all  would not be lost because all of your work (including the history of changes) is safely stored on GitHub's servers, and can be accessed from any computer.
 
 ## Add a new file locally and push
+
 Create a new file in your repo called "fortytwo.py" containing the python code
+
 ```
 ans = 42
 print(f"{ans} is the answer!")
@@ -88,6 +112,7 @@ Now we can commit, and then push up to GitHub repo!
 Now you can go to GitHub, refresh your browser tab, and see that our little Python program has been added to the GitHub repo!
 
 ## A brief aside about text files
+
 Many of the files we deal with as coders / data scientists are plain text files. 
 
 You might think that all plain text files end with a .txt extension. Some do, but the .txt extension is merely a way to tell both the computer and computer users that "this is *just* a file complaining plain text - nothing more". 
@@ -98,6 +123,7 @@ The nice thing about having these all be plain text files is that you can quickl
 
 
 ## Change a file on GitHub and fetch
+
 Create a new file on GitHub using Add File -> Create new file. I made a new file called "fileOnGitHub.py" that contained the code `print("I'm a new file created on GitHub!")` but you can do whatever you wish!
 
 Now let's fetch the changes from our local terminal using `git fetch`.
@@ -121,6 +147,7 @@ Viola! Now you have the new file (again, you can confirm this with an `ls`), and
 
 
 ## Change a file on GitHub and pull
+
 Using `git fetch` and `git merge` is considered the safe way to update your local repo with any changes made to the origin (i.e. the GitHub repo). Using `git pull origin` is the "dangerous" way to sync your local repo with the version on GitHub. It is used when you are ***absolutely sure*** that the version on GitHub is what you want. It doesn't ask you any questions or tell you anything, it just incorporates any changes on the origin into your local branch.
 
 To see this, create another new file on the GitHub version of your repo, just like you did above. (I made a file called "yetAnotherFileOnGitHub.py".)
@@ -134,11 +161,13 @@ After that, do an `ls`, and you'll see that your new file has been immediately a
 Many people (including me) fall into the habit of using `git pull origin` a lot because it's quick and easy. Just always be aware that you want to be absolutely sure that you want to incorporate all the changes made on the origin into your local repo!
 
 ## Summary
+
 The things covered in the above exercise cover the basic git commands and workflow used to back up your projects to GitHub. This provides you with not only a backup in case anything should happen to your computer, but also allows you to access the current version of your project from any computer with an internet connection.
 
-## footnote
-\* The some versions of Linux, including the Mac OS, come with a terminal based text editor called "nano" that is easy to use and great for quick simple edits. I love it.   
-
-To edit an existing file using nano, just type `nano <existing filename>` at the terminal. To create a new file and edit it, type `touch <new filename>` to create the file, and then `nano <new filename>` to edit it.  
-
-There is also a long-running, famous, and ubiquitous text editor called "vi" that has evolved into "vim" that you should at least know about if you want data science street cred. Type `vi` or `vim` at the terminal to get started.
+> [!NOTE]  
+> 
+> The some versions of Linux, including the Mac OS, come with a terminal based text editor called "nano" that is easy to use and great for quick simple edits. I love it.   
+>
+> To edit an existing file using nano, just type `nano <existing filename>` at the terminal. To create a new file and edit it, type `touch <new filename>` to create the file, and then `nano <new filename>` to edit it.  
+>
+> There is also a long-running, famous, and ubiquitous text editor called "vi" that has evolved into "vim" that you should at least know about if you want data science street cred. Type `vi` or `vim` at the terminal to get started.
