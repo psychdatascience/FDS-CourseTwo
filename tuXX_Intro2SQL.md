@@ -28,7 +28,7 @@ For example, if we wanted to know Tania's schedule, we could use the first table
 
 Notice that, using the same basic procedure in reverse, we could find out which students are taking, say, Calculus (that would be Li, Abby, and Umesh).
 
-That is fundamentally how a relational database works. Notice that each table has at least one column that corresponds to a column in at least one other table. This lets us jump from table to table to get the information we want.
+That is fundamentally how relational databases work. Notice that each table has at least one column that corresponds to a column in at least one other table. This lets us jump from table to table to get the information we want.
 
 That's really it! Everything else is just learning the SQL language to do things like we just did above, and understanding the particular database on which we're working.
 
