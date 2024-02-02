@@ -4,4 +4,21 @@ SQL is short for *Structured Query Language*. Developed in the 70's at IBM, SQL 
 
 In Python, there are built-in data types, but these are very flexible. We can choose to store and access data however we want. NumPy and Pandas were both written by Pythonistas so they could store and access data in arrays or data frames, respectively. Moreover, anyone can, in principle, write their own storage scheme if they wish – that's the flexibility of Python!
 
-SQL, on the other hand, is very specifically tailored to data stored in these relational data bases and, as such, is referred to as a *domain specific language*, as opposed to a *general purpose language* such as Python.
+SQL, on the other hand, is very specifically tailored to data stored in these relational data bases and, as such, is referred to as a *domain specific language*, as opposed to a *general purpose language* such as Python. So, yes, learning SQL means that we will be learning a *new programming language*, but one that's tailored to do very specific tasks on a very specific arrangement of data. 
+
+### Relational Databases
+
+Relational data bases are made up of "tables", which are much like data frames in R or Pandas (or tibbles, in the case of using the Tidyverse in R). Consider the following table:
+
+![simple table of student ID and name](images/table.png)
+
+
+
+
+
+
+
+
+
+
+
