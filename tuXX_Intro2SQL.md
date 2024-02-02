@@ -10,11 +10,27 @@ SQL, on the other hand, is very specifically tailored to data stored in these re
 
 Relational data bases are made up of "tables", which are much like data frames in R or Pandas (or tibbles, in the case of using the Tidyverse in R). Consider the following table:
 
-![simple table of student ID and name](images/table.png)
+<img src="images/table.png" alt="simple table of student ID and name" style="zoom:50%;" />
 
+We would generally refer to the rows as either "rows" or "observations". In SQL, they are referred to as "rows" or "tupples". Our "columns" or "variables" become "columns" or "attributes". The entire table is a "table" or a "relation". The terms "tupple", "attribute", and "relation" are rarely used in practice, but we should know them just in case.
 
+This table is a "relation" because each tupple relates a student ID to a Name and vice versa. Now consider the following 2 tables as well:
 
+<img src="images/table2.png" alt="Student Schedules" style="zoom:50%;" />
 
+<img src="images/table3.png" alt="Course IDs" style="zoom:50%;" />
+
+Taken together, these 3 tables form a little relational database!
+
+If we wanted to find out what courses (by name) a student was taking, we could look up their ID in the first table, then find the corresponding course IDs in the second table and, finally, look up what courses these are in the final table.
+
+For example, if we wanted to know Tania's schedule, we could use the first table to find her ID (3). Then we could use the second table to see that the student with ID 3 is taking the courses with IDs 2, 3, and 4. Finally, we could use the last table to see that these courses are Chemistry, Writing, and Statistics.
+
+Notice that, using the same basic procedure in reverse, we could find out which students are taking, say, Calculus (that would be Li, Abby, and Umesh).
+
+That is fundamentally how a relational database works. Notice that each table has at least one column that corresponds to a column in at least one other table. This lets us jump from table to table to get the information we want.
+
+That's really it! Everything else is just learning the SQL language to do things like we just did above, and understanding the particular database on which we're working.
 
 
 
