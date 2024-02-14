@@ -32,6 +32,12 @@ That is fundamentally how relational databases work. Notice that each table has 
 
 That's really it! Everything else is just learning the SQL language to do things like we just did above, and understanding the particular database on which we're working.
 
+### Relational Databases vs. Single Data Frames
+
+
+
+
+
 ### SQLite
 
 SQL comes in many flavors or dialects or whatever you want to call them. Many of these are proprietary (e.g. Oracle), but SQLite is free and open source. And, if you have a Mac, it's already installed on your computer! If you are running windows, you can download it from the [SQLite homepage](https://www.sqlite.org/index.html) (make sure and download both the DLL and the command line tools).
