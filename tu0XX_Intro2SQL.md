@@ -34,9 +34,13 @@ That's really it! Everything else is just learning the SQL language to do things
 
 ### Relational Databases vs. Single Data Frames
 
+You’ve probably already been thinking “Wait, couldn’t we put this all into one ‘tidy’ data frame, just like we would using R or Python/Pandas?” The answer is of course yes, and here’s such a table:
 
+<img src="images/tableCombined.png" alt="single table" style="zoom:50%;" />
 
+This has all the same information as in the previous 3 tables and is all in a single place. In fact, for a small dataset like this, seeing what courses Tania is taking by eye is much easier by glancing at this single data frame that using the relational database method method on the first 3 tables. 
 
+But now consider the same sort of information for even a large high school or small university. We have many more types of information (columns), and many more items of each type. With a single data frame, anytime *anything* changed, we’d have to add or modify at least one entire row, making sure we got everything right. With the relational database method updating information is simpler. When a professor offers a new course, for example, *only the course table needs to be updated*! When a new student joins or graduates, *only the student table needs to be updated!* And when a student registers for particular classes, *only the table relating student and course IDs needs to be updated*. In short, different kinds of data are compartmentalized into different tables, making the structure of the overall data set more clear, and reducing the chances of errors when things need to be updated. 
 
 ### SQLite
 
