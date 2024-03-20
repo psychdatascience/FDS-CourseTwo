@@ -1,6 +1,6 @@
 ### FDSII Final Project Guidelines
 
-Work in groups of 2 or 3. Once you have your group, create a public GitHub repository for it. This way you can collaborate on writing the code.
+Work in groups of 2 or 3. Once you have your group, create a public GitHub repository for it. This way you can collaborate on writing the code. Having a GitHub repo to which everybody has contributed is a  requirement for the project.
 
 #### Basic project types
 
@@ -16,3 +16,8 @@ As we've already seen in class, getting a dataset in shape for analysis can take
 #### Simulation
 
 Another route to go is to do a simulation project. Earlier in the class (and in FDS I), we did some simulations of elections. It might be interesting to, say, do a realistic simulation of the upcoming presidential election based on real polling and the real electoral college system. Or one could simulate the spread of a disease in a population depending on various behaviors of the population (rates of masking, social distancing, etc.). Or a sports tournament, a war-game, etc. If you have an idea for a simulation, but have no idea how to get started, let's chat!
+
+
+
+#### Deliverables
+
