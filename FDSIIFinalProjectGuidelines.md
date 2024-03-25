@@ -1,6 +1,6 @@
 ### FDSII Final Project Guidelines
 
-Work in groups of 2 or 3. Please self-select these groups ASAP. Once you have your group, create a public GitHub repository for it. This way you can collaborate on writing the code. Having a GitHub repo to which everybody has contributed is a  requirement for the project.
+Work in groups of 2 or 3. Please self-select these groups ASAP. Once you have your group, create a public GitHub repository for it (one of the team members will take the lead in doing this using their GitHub account). This way you can collaborate on writing the code via GitHub  [pull requests (PR)](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests). Having a GitHub repo to which everybody has contributed is a  requirement for the project.
 
 #### Basic project types
 
@@ -27,16 +27,14 @@ The written report should should be co-authored by all of the members of the gro
 
 The format of the written report is somewhat flexible. But all of them should have 
 
+* a title page
 * a general introduction section: this should describe the project or question and motivate the reader to be interested in it.
+* a methods or analysis section that describes what you did
+* a results section that describes what your found (emphase the figures)
 * a conclusion section: this should summarize the findings and convey the take-home message.
+* a references section for any literature on the topic you cite.
 
-In between, you can have a “what we did” section (i.e. “Methods”), and a “what we found” section (i.e. “Results”).
-
-Alternatively, you can have a series of two or more sections that basically say 
-
-	* “We did this, and we found this”
-	* “So we did this, and then we found this”
-	* etc. 
+Many of you will recognize the above as being APA format, but your figures should be in the document (with captions) rather than tacked on at the end.
 
 There should be no code in the written report. It should be text and figures only.
 
@@ -46,7 +44,7 @@ The notebook(s), that you used to do your analyses. These don’t need to “sub
 
 ##### A Presentation
 
-The presentation will be a ~10 to 15 minute description of your project given to the class during the last week of classes. It should be basically a presentation of the written report, which means that the slides should consist of the figures from the written report and perhaps some sparse bullet-point slides to assist with the narrative. 
+The presentation will be a ~10 minute (so 5 to 10 slides) description of your project given to the class during the last week of classes. It should be basically a presentation of the written report, which means that the slides should consist of the figures from the written report and perhaps some sparse bullet-point slides to assist with the narrative. 
 
 The presentation will also be a team effort. You can divide it up however you wish, but everyone on the team should describe some component of the project to the class. For example, one person could give the introduction, another person could describe the findings, and the third person could wrap things up with the conclusions. 
 
