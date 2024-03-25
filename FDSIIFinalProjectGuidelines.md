@@ -23,7 +23,7 @@ Another route to go is to do a simulation project. Earlier in the class (and in 
 
 ##### A Written Report
 
-The written report should should be co-authored by all of the members of the group. This can take several forms. Each person can right a draft of a section or sections, and then you can edit each others sections, or one person can write a rough draft of the whole thing, and the others can edit and polish the final project. 
+The written report should should be co-authored by all of the members of the group. This collaborative effort can take several forms. Each person can right a draft of a section or sections, and then you can edit each others sections, or one person can write a rough draft of the whole thing, and the others can edit and polish the final project. 
 
 The format of the written report is somewhat flexible. But all of them should have 
 
@@ -40,7 +40,7 @@ There should be no code in the written report. It should be text and figures onl
 
 ##### A Jupyter Notebook (or Notebooks)
 
-The notebook(s), that you used to do your analyses. These don’t need to “submitted”, they just need to be in your GitHub repo.
+The notebook(s), that you used to do your analyses. These don’t need to “submitted”, they just need to be in your GitHub repo. Where appropriate, text can be common to both the notebook at the report.
 
 ##### A Presentation
 
