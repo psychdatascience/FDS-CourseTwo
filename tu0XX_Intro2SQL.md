@@ -42,6 +42,12 @@ This has all the same information as in the previous 3 tables and is all in a si
 
 But now consider the same sort of information for even a large high school or small university. We have many more types of information (columns), and many more items of each type. With a single data frame, anytime *anything* changed, we’d have to add or modify at least one entire row, making sure we got everything right. With the relational database method updating information is simpler. When a professor offers a new course, for example, *only the course table needs to be updated*! When a new student joins or graduates, *only the student table needs to be updated!* And when a student registers for particular classes, *only the table relating student and course IDs needs to be updated*. In short, different kinds of data are compartmentalized into different tables, making the structure of the overall data set more clear, and reducing the chances of errors when things need to be updated. 
 
+### SQL
+
+SQL stands for Structured Query Language. It can be pronounced “ess cue ell” or “sequel” – the latter comes from the very first version developed in the early 1970s, which was called SEQUEL, for Structure English Query Language. As that name suggests, SQL was designed from the start to be, like Python, very human-readable.
+
+SQL, unlike Python, is not a general purpose programming language. Rather, SQL is a very specialized (“domain-specific”) language; its sole purpose is to allow you to access data stored in a relational database.
+
 ### SQLite
 
 SQL comes in many flavors or dialects or whatever you want to call them. Many of these are proprietary (e.g. Oracle), but SQLite is free and open source. And, if you have a Mac, it's already installed on your computer! If you are running windows, you can download it from the [SQLite homepage](https://www.sqlite.org/index.html) (make sure and download both the DLL and the command line tools).
