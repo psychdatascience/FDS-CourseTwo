@@ -11,8 +11,13 @@
 #### Intro to data bases, SQLite and SQLiteStudio
 
 - pre-class reading (high level - databases and SQL)
+
 - in-class 
+
   - discuss pre-class material
-  - install *Studio*
+  - install SQLiteStudio (if not already installed)
+  - download Rexon_Metals.db
   - tour of UI
   - simple queries and views
+
+  
