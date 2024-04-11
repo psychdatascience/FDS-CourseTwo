@@ -15,9 +15,22 @@
 - in-class 
 
   - discuss pre-class material
+
   - install SQLiteStudio (if not already installed)
+
   - download Rexon_Metals.db
+
   - tour of UI
+
   - simple queries and views
+
+    
+
+#### More advanced SQL queries
+ - joins
+ - aliases
+ - 
+
+  
 
   
