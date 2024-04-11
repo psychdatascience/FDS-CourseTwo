@@ -4,6 +4,8 @@ If you haven’t already dowloaded and installed SQLiteStudio, do so now. Go ahe
 
 ### Tour of SQLiteStudio
 
+SQLiteStudio is a really nice IDE (integrated development environment) for working with SQL (or, more precisely, the widely-used SQLite dialect of SQL). If you’ve used another IDE such as RStudio (or PyCharm or MATLAB), you should find it somewhat familiar.
+
 #### Panes
 
 This is the SQLiteStudio window.
@@ -18,7 +20,7 @@ At the bottom of everything is the Status pane. It shows how long your query too
 
 #### Accessing a database
 
-In order to access the data in a database, we need to “add” the database and then “connect” to it. Well use this concept of establishing a connection to a database again later, when we learn to use SQL from Python. For this exercise, we’re going to use the rexon_metals.db dataset that’s in the Canvas module. As we’ll soon see for ourselves, it contains customer, order, and product information for the fictional Rexon Metals company.
+In order to access the data in a database, we need to “add” the database and then “connect” to it. Well use this concept of establishing a connection to a database again later, when we learn to use SQL from Python. For this exercise, we’re going to use the ***rexon_metals.db*** dataset that’s in the Canvas module. As we’ll soon see for ourselves, it contains customer, order, and product information for the fictional Rexon Metals company.
 
 ##### Add a database
 
@@ -156,9 +158,26 @@ Try this: Make a view that shows the price and a total price (the price plus the
 
 #### Exporting View Data
 
+You can export the results of your queries to a .csv file very easily by hitting the “Export results” button just above the editor pane (it’s 4 blue arrows pointing outward). This will bring up a standard save dialog that allows you to name the file to be exported and pick it’s type (which would be .csv for reading into a Pandas dataframe). 
 
+---
+
+Try this: Export the data from one of the above queries, and then read it into a Pandas dataframe!
 
 #### Saving a View
+
+Once you have a query the way you want it, you can save it as a view for later use. In other words, if the data in the tables gets updated, you don’t have to re-write your query to get an updated table, you just re-run your saved view! To save your current SQL code as a View, just click the “Create view from query” button at the top of the editor pane (the lightning bolt with the little green plus sign). Once saved, you view is there for evermore or until you delete it (whichever comes first).
+
+### Summary
+
+We should now be able to use SQLiteStudio to accomplish a few basic tasks
+
+* access a database
+* write simple SQL queries
+* export query results to a .csv file
+* save a query as a View for future use
+
+And that’s a pretty good start for gaining a functional understanding of SQL!
 
 
 
