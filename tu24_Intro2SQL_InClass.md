@@ -164,6 +164,8 @@ You can export the results of your queries to a .csv file very easily by hitting
 
 Try this: Export the data from one of the above queries, and then read it into a Pandas dataframe!
 
+---
+
 #### Saving a View
 
 Once you have a query the way you want it, you can save it as a view for later use. In other words, if the data in the tables gets updated, you don’t have to re-write your query to get an updated table, you just re-run your saved view! To save your current SQL code as a View, just click the “Create view from query” button at the top of the editor pane (the lightning bolt with the little green plus sign). Once saved, you view is there for evermore or until you delete it (whichever comes first).
