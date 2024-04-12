@@ -27,6 +27,12 @@
     
 
 #### More advanced SQL queries
+ 
+ - BETWEEN
+ - AND, OR, and IN
+ - WHERE on text - LIKE and wildcards ( _ and %) 
+ - WHERE on booleans and the NOT keyword
+ - 
  - joins
  - aliases
  - 
