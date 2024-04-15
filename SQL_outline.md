@@ -24,18 +24,37 @@
 
   - simple queries and views
 
-    
+     - SELECT
+     
+     - FROM
+     
+     - WHERE
+     
+     - simple calculation on columns in a view
+   - saving views and query results
+
+
+
 
 #### More advanced SQL queries
- 
+
  - BETWEEN
+
  - AND, OR, and IN
+
  - WHERE on text - LIKE and wildcards ( _ and %) 
+
  - WHERE on booleans and the NOT keyword
- - 
- - joins
- - aliases
- - 
+
+ - GROUP BY
+
+ - ORDER BY
+
+ - CASE
+
+ - JOIN
+
+   
 
   
 
