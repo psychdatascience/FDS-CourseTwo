@@ -50,49 +50,61 @@ FROM STATION_DATA
 WHERE report_code LIKE '_F%';
 ```
 
-#### WHERE Clauses with Booleans
+#### WHERE Clauses with Booleans and AND
 
-- Introduction to filtering with boolean data regarding weather conditions.
-- **Example Query**: Select weather data where it was foggy but not raining.
+We can, of course, do filtering with boolean data, regarding weather conditions for example.
 
 ```sqlite
-SELECT * FROM station_data WHERE fog = 1 AND rain = 0;
+SELECT * 
+FROM station_data 
+WHERE precipitation > 0 AND fog = 1
 ```
 
-####  Using BETWEEN, AND, OR, and IN with WHERE
+You’re probably thinking something like “Wait, why do we have to test for. Since it’s Boolean, can’t we just do something like this? ”
 
-- Discuss the use of these operators to refine query results in both databases.
-- **Example Query for Products**: Select products within a certain price range.
+```sqlite
+SELECT * 
+FROM station_data 
+WHERE precipitation > 0 AND fog
+```
+
+Try it! It works on some versions of SQL but not others.
+
+##### WHERE Clauses using BETWEEN, AND, OR, and IN
+
+These work exactly like we’d expect. So, for example, getting products within a certain price range goes like this
 
 ```sqlite
 SELECT * FROM product
 WHERE price BETWEEN 100 AND 200;
 ```
 
-- **Example Query for Weather**: Select station data from specific months when either rain or hail was reported.
+And grabbing the data from April and May when there was rain or hail. 
 
 ```sqlite
 SELECT * FROM station_data
 WHERE month IN (4, 5) AND (rain = 1 OR hail = 1);
 ```
 
-#### The BYs for WHERE
+ Note the first set of parentheses is necessary for the `IN`, and the second set insures the correct order of operations for the comparisons.
 
-#####  GROUP BY
+#### The BYs for WHERE: GROUP_BY and ORDER BY
 
-- Explain grouping results by one or more columns.
-- **Example Query for STATION_DATA**: Group by year and calculate average temperature.
+#####  `GROUP BY`
+
+`GROUP BY` is used when you need to *aggregate* data, like count the number of observations or compute the average within each group specified for `GROUP_BY`. For example, let’s group by year and calculate average temperature.
 
 ```sqlite
-SELECT year, AVG(temperature) AS ave_temp
+SELECT year, AVG(temperature)
 FROM station_data
 GROUP BY year;
 ```
 
+In mosT SQL implementations, there are only 5 aggregate functions, MIN, MAX, SUM, COUNT, and AVG. It’s a strange set, because AVG is redundant (it could be computed with the sums and the counts), and there is no standard deviation or variance. Ah, well…
+
 ##### ORDER BY
 
-- How to sort query results.
-- **Example Query for Weather**: Order station data by temperature in descending order.
+We can sort data by any column in ascending (`ASC`) or decending (`DESC`) order. To sort the station data by temperature in descending order, do
 
 ```sqlite
 SELECT * FROM station_data
