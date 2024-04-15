@@ -1,4 +1,6 @@
-## Mo’ sql
+## Further SQL Queries
+
+
 
 
 
@@ -9,13 +11,14 @@
 - Brief overview of the databases: `rexon_metals.db` for metal products and `weather_stations.db` for weather data.
 - Setting up the SQLite environment.
 
-#### 2. WHERE Clauses on Text Data
+#### 2. More WHERE Clause Use
+
+##### WHERE on text  data
 
 - Explain text-based filtering using `WHERE` in the context of product descriptions.
 - **Example Query**: Select records where the product description includes "Steel".
 
-```
-sqlCopy code
+```sqlite
 SELECT * FROM product WHERE description LIKE '%Steel%';
 ```
 
@@ -24,8 +27,7 @@ SELECT * FROM product WHERE description LIKE '%Steel%';
 - Introduction to filtering with boolean data regarding weather conditions.
 - **Example Query**: Select weather data where it was foggy but not raining.
 
-```
-sqlCopy code
+```sqlite
 SELECT * FROM station_data WHERE fog = 1 AND rain = 0;
 ```
 
@@ -34,16 +36,14 @@ SELECT * FROM station_data WHERE fog = 1 AND rain = 0;
 - Discuss the use of these operators to refine query results in both databases.
 - **Example Query for Products**: Select products within a certain price range.
 
-```
-sqlCopy code
+```sqlite
 SELECT * FROM product
 WHERE price BETWEEN 100 AND 200;
 ```
 
 - **Example Query for Weather**: Select station data from specific months when either rain or hail was reported.
 
-```
-sqlCopy code
+```sqlite
 SELECT * FROM station_data
 WHERE month IN (4, 5) AND (rain = 1 OR hail = 1);
 ```
@@ -54,7 +54,6 @@ WHERE month IN (4, 5) AND (rain = 1 OR hail = 1);
 - **Example Query for Products**: Group products by description and calculate average price.
 
 ```
-sqlCopy code
 SELECT description, AVG(price) AS average_price
 FROM product
 GROUP BY description;
