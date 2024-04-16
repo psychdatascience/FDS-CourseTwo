@@ -105,7 +105,7 @@ FROM station_data
 GROUP BY year;
 ```
 
-In mosT SQL implementations, there are only 5 aggregate functions, MIN, MAX, SUM, COUNT, and AVG. It’s a strange set, because AVG is redundant (it could be computed with the sums and the counts), and there is no standard deviation or variance. Ah, well…
+In most SQL implementations, there are only 5 aggregate functions, MIN, MAX, SUM, COUNT, and AVG. It’s a strange set, because AVG is redundant (it could be computed with the sums and the counts), and there is no standard deviation or variance. Ah, well…
 
 ##### ORDER BY
 
