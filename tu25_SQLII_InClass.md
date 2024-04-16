@@ -2,7 +2,12 @@
 
 ### 1. Introduction
 
-Blah
+In this tutorial, we will expand on the basic `SELECT - FROM - WHERE` SQL statements. Specifically, we will learn to 
+
+* do a whole lot more with the `WHERE` clause
+* Use `CASE - WHEN` to make new columns based on existing columns
+* Define “Aliases” to make code more descriptive or more concise
+* Use `JOIN` to integrate information across tables
 
 We’ll be using 2 databases today, `rexon_metals.db` and a new database, `weather_stations.db`
 
@@ -113,8 +118,7 @@ ORDER BY temperature DESC;
 
 ### 3. CASE
 
-- Use of `CASE` for conditional expressions in SQL queries.
-- **Example Query for Weather**: Categorize days based on temperature.
+SQL has a `CASE - WHEN - ELSE` construct that is similar to the `match - case` in Python.  So we can make a new column to categorize days based on temperature like this
 
 ```sqlite
 SELECT station_number, temperature,
@@ -148,7 +152,7 @@ FROM table_name AS alias_name
 WHERE alias_name.column1 = condition;
 ```
 
-
+Note the dot syntax to reference a column using the alias.
 
 ### Using Column Aliases
 
@@ -164,66 +168,96 @@ SELECT column_name AS alias_name FROM table_name;
 
 #### Example
 
+Assign aliases to some columns in the `rexon_metals.db` to make the view more descriptive:
+
 ```sqlite
-SELECT description AS product_description, price AS product_price
+SELECT description AS product_material, 
+price AS product_price
 FROM product;
 ```
 
-In this example, `product_description` and `product_price` are aliases for the `description` and `price` columns from the `product` table, making the output more understandable.
+In this example, `product_material` and `product_price` are aliases for the `description` and `price` columns from the `product` table, making the output more understandable.
 
 ### 5. JOINs
+
+Joining information from multiple tables is a fundamental aspect of SQL. After all, why have a relational data base with multiple logically-organized tables if there is no way to integrate the data across tables. There are four basic join types, but we mostly use just two of them, the “inner join” and “left join”.
 
 #### Explanation of JOIN Types
 
 - **INNER JOIN**: Returns rows when there is a match in both tables.
-- **LEFT JOIN**: Returns all rows from the left table, and the matched rows from the right table.
-- **RIGHT JOIN** and **FULL JOIN**: These types of joins are not supported directly by SQLite but can be emulated using specific queries.
 
-#### Example Queries
+- **LEFT JOIN**: Returns all rows from the left table, and the matched rows from the right table.
+
+- **RIGHT JOIN** and **FULL JOIN**: These types of joins are not supported directly by SQLite but can be emulated using specific queries. 
+
+Here is a diagram showing the four types of joins. A represents the left table and B represents the right table.
+
+  <img src="/Users/lkcormack/Documents/GitHub/FDS-CourseTwo/data/SQL-Join-Types.png" alt="SQL JOIN explained - IONOS" style="zoom:50%;" />
+
+  Most often, we want to do an inner join; in SQL, you can specify this with `INNER JOIN`, but this is also the default if you just use `JOIN`.
 
 ##### INNER JOIN
 
-- **Purpose**: To find all orders along with their corresponding product descriptions and customer information.
-- **Example Query**:
+Let’s say we want to look at just the customers who have actually ordered something. To do this, we “join” the tables and get the names from the `customer` table who’s `customer_id`’s appear in the `customer_order` table:
 
 ```sqlite
-SELECT c.customer_name, p.description, p.price
+SELECT c.name
+FROM customer_order AS co
+INNER JOIN customer AS c ON co.customer_id = c.customer_id
+```
+
+Note the use of aliases so shorten the actual comparison.
+
+Since `JOIN` alone defaults to `INNER JOIN` and the `AS`'s are optional in this context, this also works:
+
+```sqlite
+SELECT c.name
 FROM customer_order co
-INNER JOIN customer c ON co.customer_id = c.customer_id
+JOIN customer c ON co.customer_id = c.customer_id
+```
+
+Now let’s add another join to get some product information for the companies that actually ordered something. To find all orders along with their corresponding product descriptions and customer information, we could do this:
+
+```sqlite
+SELECT c.name, p.description, p.price
+FROM customer_order AS co
+INNER JOIN customer AS c ON co.customer_id = c.customer_id
 INNER JOIN product p ON co.product_id = p.product_id;
 ```
 
 ##### LEFT JOIN
 
-- **Purpose**: List all customers and their orders, including those who have not placed any orders.
-- **Example Query**:
+List all customers and their orders, *including those who have not placed any orders*, we can use a left join:
 
 ```sqlite
-SELECT c.customer_name, p.description, p.price
+SELECT c.name, p.description, p.price
 FROM customer c
 LEFT JOIN customer_order co ON c.customer_id = co.customer_id
 LEFT JOIN product p ON co.product_id = p.product_id;
 ```
 
-#### Aggregating Data with JOINs
+This will produce a view with “NULL” values for the description and price if a company has yet to order anything.
 
-- **Purpose**: Calculate the total amount spent by each customer.
-- **Example Query**:
+##### Aggregating Data with JOINs
+
+We can `GROUP_BY` in order to compute aggregations after the join. We can also use `ORDER BY` to sort the output. Here, we compute the total amount of money spent by each of our customers, and sort the output from highest to lowest, so we can see who our big spenders are!
 
 ```sqlite
-SELECT c.customer_name, SUM(p.price) AS total_spent
+SELECT c.name, SUM(p.price * co.ORDER_QTY) AS total_spent
 FROM customer c
 JOIN customer_order co ON c.customer_id = co.customer_id
 JOIN product p ON co.product_id = p.product_id
-GROUP BY c.customer_name
+GROUP BY c.name
 ORDER BY total_spent DESC;
 ```
 
-#### Using Aliases with JOIN
+So Marsh Lane Metal Works is our biggest customer by money spent. They only ordered one time, but it was a fair amount of steel, one of the more expensive products.
 
-##### Example Without Aliases
+##### Using Aliases with JOIN
 
-Consider a query on the `rexon_metals.db` database where we need to join the `customer`, `product`, and `customer_order` tables:
+Aliases are completely optional. They can make columns in a view more descriptive, as we saw above, or you can use them to make the SELECT clause and the comparisons following a `JOIN` a bit shorter.
+
+Consider a query on the `rexon_metals.db` database where we need to join the `customer`, `product`, and `customer_order` tables. Without aliases, it looks like this:
 
 ```sqlite
 SELECT customer.customer_name, product.description, product.price
@@ -231,8 +265,6 @@ FROM customer_order
 JOIN customer ON customer_order.customer_id = customer.customer_id
 JOIN product ON customer_order.product_id = product.product_id;
 ```
-
-##### Example With Aliases
 
 Here’s the same query using aliases to make it more concise:
 
@@ -243,17 +275,18 @@ JOIN customer c ON co.customer_id = c.customer_id
 JOIN product p ON co.product_id = p.product_id;
 ```
 
-In this example, `co` is an alias for `customer_order`, `c` for `customer`, and `p` for `product`. These aliases are used to reference the respective tables in the `JOIN` conditions and when selecting columns.
+In this example, `co` is an alias for `customer_order`, `c` for `customer`, and `p` for `product`. These are used to reference the respective tables in the `JOIN` conditions and when selecting columns, to make everything more compact.
+
+Whether you use aliases or not is totally up to you (or your boss or team leader or whatever…).
 
 ### 6. Putting It All Together
 
-- Since the databases cannot be joined, this section will focus on more complex queries within each database independently.
-- **Example Query for Weather**:
+Here’s a puzzle! Make a View that has columns 1) station_number, 2) days_with_precipitation (which will be an aggregation of the `GROUP BY` following a `WHERE` filter), and 3) a station_type indicating whether the station was a “Wet Station” or a “Dry Station” depending whether the station got more than 6 days of rain or not .
 
 ```sqlite
-SELECT station_number, COUNT(*) AS days_with_precipitation,
+SELECT station_number, COUNT(station_number) AS days_with_precipitation,
 CASE
-    WHEN SUM(rain) > 10 THEN 'Wet Station'
+    WHEN SUM(rain) > 6 THEN 'Wet Station'
     ELSE 'Dry Station'
 END AS station_type
 FROM station_data
@@ -264,5 +297,4 @@ ORDER BY days_with_precipitation DESC;
 
 ### 7. Summary
 
-- Recap of the topics covered.
-- Tips for further learning and troubleshooting common issues.
+We have learned quit a bit in this tutorial. 
