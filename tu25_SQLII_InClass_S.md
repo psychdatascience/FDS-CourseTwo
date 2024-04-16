@@ -16,7 +16,7 @@ We’ll be using 2 databases today, `rexon_metals.db` and a new database, `weath
 
 ### 2. More WHERE Clause Use
 
-#### WHERE on text  data
+#### WHERE on text data
 
 The following should make sense to you (run it anyway, just to confirm).
 
@@ -105,7 +105,7 @@ FROM station_data
 GROUP BY year;
 ```
 
-In mosT SQL implementations, there are only 5 aggregate functions, MIN, MAX, SUM, COUNT, and AVG. It’s a strange set, because AVG is redundant (it could be computed with the sums and the counts), and there is no standard deviation or variance. Ah, well…
+In most SQL implementations, there are only 5 aggregate functions, MIN, MAX, SUM, COUNT, and AVG. It’s a strange set, because AVG is redundant (it could be computed with the sums and the counts), and there is no standard deviation or variance. Ah, well…
 
 ##### ORDER BY
 

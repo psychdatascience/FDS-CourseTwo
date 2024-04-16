@@ -16,7 +16,7 @@ We’ll be using 2 databases today, `rexon_metals.db` and a new database, `weath
 
 ### 2. More WHERE Clause Use
 
-#### WHERE on text  data
+#### WHERE on text data
 
 The following should make sense to you (run it anyway, just to confirm).
 
