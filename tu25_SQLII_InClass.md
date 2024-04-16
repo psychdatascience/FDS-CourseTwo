@@ -279,17 +279,19 @@ In this example, `co` is an alias for `customer_order`, `c` for `customer`, and 
 
 Whether you use aliases or not is totally up to you (or your boss or team leader or whatever…).
 
-### 6. Putting It All Together
+### 6. Exercises
 
-Here’s a puzzle! Make a View that has columns 1) station_number, 2) days_with_precipitation (which will be an aggregation of the `GROUP BY` following a `WHERE` filter), and 3) a station_type indicating whether the station was a “Wet Station” or a “Dry Station” depending whether the station got more than 6 days of rain or not.  Order the View by days_with_precipitation.
+**A**. Make a View that has columns 1) station_number, 2) days_with_precipitation (which will be an aggregation of the `GROUP BY` following a `WHERE` filter), and 3) a station_type indicating whether the station was a “Wet Station” or a “Dry Station” depending whether the station got more than 6 days of rain or not. Order the View by days_with_precipitation.Hint: Since the weather station data is a single table, we won’t need to use a join, but we will to use aggregations and a `CASE - WHEN - ELSE`.Hint: Since the weather station data is a single table, we won’t need to use a join, but we will to use aggregations and a `CASE - WHEN - ELSE`.
 
-```sqlite
+**B**. Use JOIN to create a view from the rexon_metals.db showing customer name (customer.name)  and price paid (customer_order.order_qty * product.price) for each order.
 
-```
+---
+> Turn in a pdf with screenshots of SQLiteStudio showing your query pane and the results pane for the above two exercises.
+---
 
-### 7. Summary
+7. ### Summary
 
-We have learned quit a bit in this tutorial. Specifically, we have learned to 
+  We have learned quit a bit in this tutorial. Specifically, we have learned to 
 
 * do more with `WHERE` filtering
 * make new informative or summary columns with `CASE`

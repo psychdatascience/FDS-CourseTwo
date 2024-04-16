@@ -283,9 +283,9 @@ In this example, `co` is an alias for `customer_order`, `c` for `customer`, and 
 
 Whether you use aliases or not is totally up to you (or your boss or team leader or whatever…).
 
-### 6. Putting It All Together
+### 6. Exercises
 
-Here’s a puzzle! Make a View that has columns 1) station_number, 2) days_with_precipitation (which will be an aggregation of the `GROUP BY` following a `WHERE` filter), and 3) a station_type indicating whether the station was a “Wet Station” or a “Dry Station” depending whether the station got more than 6 days of rain or not. Order the View by days_with_precipitation.
+**A**. Make a View that has columns 1) station_number, 2) days_with_precipitation (which will be an aggregation of the `GROUP BY` following a `WHERE` filter), and 3) a station_type indicating whether the station was a “Wet Station” or a “Dry Station” depending whether the station got more than 6 days of rain or not. Order the View by days_with_precipitation.Hint: Since the weather station data is a single table, we won’t need to use a join, but we will to use aggregations and a `CASE - WHEN - ELSE`.
 
 ```sqlite
 SELECT station_number, COUNT(station_number) AS days_with_precipitation,
@@ -298,6 +298,25 @@ WHERE rain = 1 OR hail = 1
 GROUP BY station_number
 ORDER BY days_with_precipitation DESC;
 ```
+
+**B**. Use JOIN to create a view from the rexon_metals.db showing customer name (customer.name)  and price paid (customer_order.order_qty * product.price) for each order.
+
+```sqlite 
+SELECT 
+    c.customer_name,
+    co.order_qty * p.price AS price_paid
+FROM 
+    customer_order co
+JOIN 
+    customer c ON co.customer_id = c.customer_id
+JOIN 
+    product p ON co.product_id = p.product_id;
+
+```
+
+---
+> Turn in a pdf with screenshots of SQLiteStudio showing your query and the first few rows of the results for the above two exercises.
+---
 
 ### 7. Summary
 
