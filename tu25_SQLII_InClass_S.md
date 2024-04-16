@@ -216,13 +216,17 @@ FROM customer_order co
 JOIN customer c ON co.customer_id = c.customer_id
 ```
 
-Now let’s add another join to get some product information for the companies that actually ordered something. To find all orders along with their corresponding product descriptions and customer information, we could do this:
+> Note: Remember `JOIN` is the same as `INNER JOIN`. An inner join is what we’ll want most of the time, which is why SQL defaults to inner join when `JOIN` alone is used. Once you’re used to it, it makes the code more compact and readable.
+
+Now let’s add another join to get some product information for the companies that actually ordered something. To find all orders along with their corresponding product descriptions and customer information, we’re going to do 2 joins. The first will tie the customer IDs together, and the second will tie the product IDs together. So, at the end, we’ll have the customer name from `CUSTOMER`, and the kind of metal and the price from `PRODUCT`, using CUSTOMER_ORDER as an intermediary to tie the `CUSTOMER` table to the `PRODUCT` table.
+
+It looks like this:
 
 ```sqlite
 SELECT c.name, p.description, p.price
 FROM customer_order AS co
-INNER JOIN customer AS c ON co.customer_id = c.customer_id
-INNER JOIN product p ON co.product_id = p.product_id;
+JOIN customer AS c ON co.customer_id = c.customer_id
+JOIN product p ON co.product_id = p.product_id;
 ```
 
 ##### LEFT JOIN
@@ -281,10 +285,18 @@ Whether you use aliases or not is totally up to you (or your boss or team leader
 
 ### 6. Putting It All Together
 
-Here’s a puzzle! Make a View that has columns 1) station_number, 2) days_with_precipitation (which will be an aggregation of the `GROUP BY` following a `WHERE` filter), and 3) a station_type indicating whether the station was a “Wet Station” or a “Dry Station” depending whether the station got more than 6 days of rain or not.  Order the View by days_with_precipitation.
+Here’s a puzzle! Make a View that has columns 1) station_number, 2) days_with_precipitation (which will be an aggregation of the `GROUP BY` following a `WHERE` filter), and 3) a station_type indicating whether the station was a “Wet Station” or a “Dry Station” depending whether the station got more than 6 days of rain or not. Order the View by days_with_precipitation.
 
 ```sqlite
-
+SELECT station_number, COUNT(station_number) AS days_with_precipitation,
+CASE
+    WHEN SUM(rain) > 6 THEN 'Wet Station'
+    ELSE 'Dry Station'
+END AS station_type
+FROM station_data
+WHERE rain = 1 OR hail = 1
+GROUP BY station_number
+ORDER BY days_with_precipitation DESC;
 ```
 
 ### 7. Summary

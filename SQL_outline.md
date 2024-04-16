@@ -35,26 +35,22 @@
 
 
 
-
 #### More advanced SQL queries
 
  - BETWEEN
-
  - AND, OR, and IN
-
  - WHERE on text - LIKE and wildcards ( _ and %) 
-
  - WHERE on booleans and the NOT keyword
-
  - GROUP BY
-
  - ORDER BY
-
  - CASE
-
  - JOIN
 
-   
+#### Using SQL from within Python
+
+The `SQLite3` package / API.
+
+
 
   
 

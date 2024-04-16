@@ -281,10 +281,18 @@ Whether you use aliases or not is totally up to you (or your boss or team leader
 
 ### 6. Putting It All Together
 
-Here’s a puzzle! Make a View that has columns 1) station_number, 2) days_with_precipitation (which will be an aggregation of the `GROUP BY` following a `WHERE` filter), and 3) a station_type indicating whether the station was a “Wet Station” or a “Dry Station” depending whether the station got more than 6 days of rain or not.  Order the View by days_with_precipitation.
+Here’s a puzzle! Make a View that has columns 1) station_number, 2) days_with_precipitation (which will be an aggregation of the `GROUP BY` following a `WHERE` filter), and 3) a station_type indicating whether the station was a “Wet Station” or a “Dry Station” depending whether the station got more than 6 days of rain or not .
 
 ```sqlite
-
+SELECT station_number, COUNT(station_number) AS days_with_precipitation,
+CASE
+    WHEN SUM(rain) > 6 THEN 'Wet Station'
+    ELSE 'Dry Station'
+END AS station_type
+FROM station_data
+WHERE rain = 1 OR hail = 1
+GROUP BY station_number
+ORDER BY days_with_precipitation DESC;
 ```
 
 ### 7. Summary
