@@ -297,4 +297,11 @@ ORDER BY days_with_precipitation DESC;
 
 ### 7. Summary
 
-We have learned quit a bit in this tutorial. 
+We have learned quit a bit in this tutorial. Specifically, we have learned to 
+
+* do more with `WHERE` filtering
+* make new informative or summary columns with `CASE`
+* use aliases for tables or columns if desired
+* `JOIN` columns from different tables, therefore integrating information across the database tables
+
+With that, we actually have a fairly complete albeit basic SQL mental toolbox! The rest is just practice practice practice if you need to access a SQL database. 
