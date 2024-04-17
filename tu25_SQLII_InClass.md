@@ -39,7 +39,7 @@ FROM customer
 WHERE name LIKE "R%";
 ```
 
-Or perhaps we want to search in a fairly tight geographical region. You could filter on the first three digits of the ZIP code.
+Or perhaps we want to search in a fairly tight geographical region. You could filter on the first three digits of the ZIP code. To do this, we will `CAST` the integer variable `zip` to a string with `CAST(zip AS TEXT)` before the `LIKE` comparison.
 
 ```sqlite
 SELECT * 
@@ -54,6 +54,8 @@ SELECT *
 FROM STATION_DATA
 WHERE report_code LIKE '_F%';
 ```
+
+This matches any single character in the first position, an “F” in the second position, and then anything of any length afterwards.
 
 #### WHERE Clauses with Booleans and AND
 
