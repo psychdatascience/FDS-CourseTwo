@@ -1,10 +1,9 @@
-Creating a tutorial that guides students on how to use the `sqlite3` API in Python to access and query SQLite databases from within a Jupyter Notebook is a great way to bridge SQL knowledge with Python programming skills. The tutorial will also demonstrate how to convert query results into Pandas DataFrames, which are very useful for data analysis. Here’s a structured outline with step-by-step instructions:
 
-### Tutorial: Accessing SQLite Databases and Using Pandas in a Jupyter Notebook
+
+### Accessing SQLite Databases and Using Pandas in a Jupyter Notebook
 
 #### 1. Introduction
-- Brief overview of the tools: `sqlite3` API for database interaction and Pandas for data manipulation.
-- Prerequisites: Basic knowledge of SQL queries, Python, and Jupyter Notebooks.
+In this tutorial, we’re going learn how to interact with SQL databases (sqlite, specifically) directly from within Python. 
 
 #### 2. Setting Up Your Environment
 - **Installing Necessary Libraries**: Ensure Pandas and sqlite3 are installed. You can install them using pip if they're not already installed:
