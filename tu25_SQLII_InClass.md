@@ -291,7 +291,7 @@ Whether you use aliases or not is totally up to you (or your boss or team leader
 > Turn in a pdf with screenshots of SQLiteStudio showing your query pane and the results pane for the above two exercises.
 ---
 
-7. ### Summary
+### 7. Summary
 
   We have learned quit a bit in this tutorial. Specifically, we have learned to 
 
