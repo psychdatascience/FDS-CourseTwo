@@ -8,6 +8,7 @@ fit the y-intercept only!
 import numpy as np
 import matplotlib.pyplot as plt
 
+## Make data
 x = np.array([2, 4, 6, 8, 10])
 data = np.array([1.8, 3.3, 3.7, 4.6, 6.7])
 modeldata = np.zeros(data.shape)
