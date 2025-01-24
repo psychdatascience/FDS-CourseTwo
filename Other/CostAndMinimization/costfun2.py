@@ -1,6 +1,8 @@
 
 '''
-Expanding simplemin.py to do a primitive minimization
+costfun2:
+Expanding costmin.py to do a primitive minimization crossing over the min
+We'll approach the min first from one side, then the other!
 Compute direction of error, step..., terminate
 fit the y-intercept only!
 '''
@@ -29,7 +31,7 @@ costs = []
 while_index = 0           # to keep track of how many steps we took
 
 cost = 1000               # just so we jump into the while loop
-print("entering while")
+print("entering first while")
 while cost > 0 :
     for index, x_in in enumerate(x) :
         y_out = b_intercept + b_slope*x_in          # y-intercept the thing we're changing
@@ -49,7 +51,34 @@ while cost > 0 :
     b_intercept += delta_intercept
     while_index += 1
 
-print("out of while")
+print("out of first while")
+
+## now let's try to come at the min from the other direction!
+b_intercept = 4           # Come at the min from the other side, model line way above the data
+while_index = 0           # to keep track of how many steps we took
+cost = 1000                  # just so we jump into the while loop
+print("entering second while")
+while cost > 0.42 :          # This time, we'll start below a cost theshold 
+    for index, x_in in enumerate(x) :
+        y_out = b_intercept + b_slope*x_in          # y-intercept the thing we're changing
+        modeldata[index] = y_out
+    
+    ## Compute errors and cost (total error)
+    errors = data - modeldata
+    cost = 0
+    for cost in errors :
+        cost = abs(cost)
+        cost += cost                                 # uh oh! Cost can go negative! We need a new threshold!!
+    
+    # Store the intercept and cost values
+    hypoth_intercepts.append(b_intercept)
+    costs.append(cost)
+    
+    # update the y-intercept and the while loop number
+    b_intercept -= delta_intercept
+    while_index += 1
+
+print("out of second while")
 
 print(f"data: {data}")
 print(f"model data: {modeldata}")
