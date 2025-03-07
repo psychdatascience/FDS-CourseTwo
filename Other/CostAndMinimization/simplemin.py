@@ -9,9 +9,15 @@ import numpy as np
 ## Make data
 x = np.array([2, 4, 6, 8, 10])                  # x values
 data = np.array([1.8, 3.3, 3.7, 4.6, 6.7])      # data values
-modeldata = np.zeros(data.shape)                # array to hold model data values
+
+# plot the data values
+# plt.plot(x, data, 'ro')
+# plt.show()
+
 
 ## Make model
+modeldata = np.zeros(data.shape)                # array to hold model data values
+
 # Model parameters/coefficients
 b_intercept = 0
 b_slope = 0.5
