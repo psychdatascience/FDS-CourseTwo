@@ -4,16 +4,15 @@ Linear-ish data, linear model, fit the y-intercept only!
 '''
 
 import numpy as np
+import matplotlib.pyplot as plt
 
-
-## Make data
+# Make data
 x = np.array([2, 4, 6, 8, 10])                  # x values
 data = np.array([1.8, 3.3, 3.7, 4.6, 6.7])      # data values
 
 # plot the data values
-# plt.plot(x, data, 'ro')
-# plt.show()
-
+plt.plot(x, data, 'ro')
+plt.show()
 
 ## Make model
 modeldata = np.zeros(data.shape)                # array to hold model data values
@@ -26,6 +25,11 @@ b_slope = 0.5
 for index, x_in in enumerate(x) :
     y_out = b_intercept + b_slope*x_in
     modeldata[index] = y_out
+
+# plot the model values on the same plot as the data
+plt.plot(x, data, 'ro')         # data
+plt.plot(x, modeldata, 'b-')    # model
+plt.show()
 
 ## Compute cost (total error)
 # compute individual errors
