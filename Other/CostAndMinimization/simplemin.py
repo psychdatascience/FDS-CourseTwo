@@ -12,18 +12,21 @@ data = np.array([1.8, 3.3, 3.7, 4.6, 6.7])      # data values
 
 # plot the data values
 plt.plot(x, data, 'ro')
+plt.xlabel('Nation\'s GDP')
+plt.ylabel('Nation\'s Happiness')
+plt.title('Nation\'s Happiness vs GDP')
 plt.show()
 
 ## Make model
 modeldata = np.zeros(data.shape)                # array to hold model data values
 
 # Model parameters/coefficients
-b_intercept = 0
-b_slope = 0.5
+intercept = 0
+slope = 0.5
 
 # Compute model values
 for index, x_in in enumerate(x) :
-    y_out = b_intercept + b_slope*x_in
+    y_out = intercept + slope*x_in
     modeldata[index] = y_out
 
 # plot the model values on the same plot as the data
