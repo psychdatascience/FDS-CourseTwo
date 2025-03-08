@@ -34,9 +34,20 @@ plt.plot(x, data, 'ro')         # data
 plt.plot(x, modeldata, 'b-')    # model
 plt.show()
 
+# plot the model values and errors on the same plot as the data
+plt.plot(x, data, 'ro')         # data
+plt.plot(x, modeldata, 'b-')    # model
+
+# Add vertical lines to represent errors
+for i in range(len(x)):
+    plt.vlines(x[i], modeldata[i], data[i], colors='g', linestyles='dashed')
+
+plt.show()
 ## Compute cost (total error)
 # compute individual errors
 errors = data - modeldata
+
+
 
 # compute cost
 cost = 0
