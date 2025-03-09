@@ -54,3 +54,13 @@ ax2.set_zlabel('Log(Cost)')
 ax2.set_title('Log(Cost) vs. Y-Intercept and Slope')
 
 plt.show()
+
+# Find the index of the minimum cost
+min_cost_index = np.argmin(costs)
+min_cost_intercept = intercepts_grid.flatten()[min_cost_index]
+min_cost_slope = slopes_grid.flatten()[min_cost_index]
+min_cost = costs.flatten()[min_cost_index]
+
+print(f"The minimum cost is {min_cost}")
+print(f"The y-intercept for the minimum cost is {min_cost_intercept}")
+print(f"The slope for the minimum cost is {min_cost_slope}")
