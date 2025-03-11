@@ -32,6 +32,7 @@ for index, x_in in enumerate(x) :
 # plot the model values on the same plot as the data
 plt.plot(x, data, 'ro')         # data
 plt.plot(x, modeldata, 'b-')    # model
+plt.legend(['data', 'model'])
 plt.show()
 
 # plot the model values and errors on the same plot as the data
