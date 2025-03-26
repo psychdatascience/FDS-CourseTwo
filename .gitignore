@@ -1,3 +1,5 @@
 # Ignore stupid os generated files
 .DS_Store
 
+.tu17_LinearRegression_I_HW_S.ipynb.layout
+.jupyter/desktop-workspaces/default-37a8.jupyterlab-workspace
